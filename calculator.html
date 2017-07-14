@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+
+
+    <style type="text/css">
+        button, input, select, textarea {
+            line-height: inherit;
+            margin: 5px;
+        }
+
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+<div class="container">
+    <h2>Calculator</h2>
+    <form name="calculator">
+        <div class="row">
+            <input type="text" name="number" size="30"/>
+        </div>
+        <div class="row" style="margin-bottom: 10px">
+            <input type="button" class="btn btn-success" value="=" onclick="equals()"/>
+            <input type="button" class="btn btn-warning" value="+" onclick="calculator.number.value += '+'">
+            <input type="button" class="btn btn-warning" value="-" onclick="calculator.number.value += '-'">
+            <input type="button" class="btn btn-warning" value="*" onclick="calculator.number.value += '*'">
+            <input type="button" class="btn btn-warning" value="/" onclick="calculator.number.value += '/'">
+        </div>
+        <div class="row">
+            <input type="button" class="btn btn-secondary" value="1" onclick="one()">
+            <input type="button" class="btn btn-secondary" value="2" onclick="two()">
+            <input type="button" class="btn btn-secondary" value="3" onclick="three()">
+            <input type="button" class="btn btn-secondary" value="4" onclick="four()">
+            <input type="button" class="btn btn-secondary" value="5" onclick="five()">
+        </div>
+        <div class="row">
+            <input type="button" class="btn btn-secondary" value="6" onclick="six()">
+            <input type="button" class="btn btn-secondary" value="7" onclick="seven()">
+            <input type="button" class="btn btn-secondary" value="8" onclick="eight()">
+            <input type="button" class="btn btn-secondary" value="9" onclick="nine()">
+            <input type="button" class="btn btn-secondary" value="0" onclick="nul()">
+        </div>
+    </form>
+</div>
+
+<script>
+    var nOne, nTwo, nThree, nFour, nFive, nSix, nSeven, nEight, nNine, nNul, nEquals;
+    function one() {
+        nOne = calculator.number.value += '1';
+    }
+    function two() {
+        nTwo = calculator.number.value += '2';
+    }
+    function three() {
+        nThree = calculator.number.value += '3';
+    }
+    function four() {
+        nFour = calculator.number.value += '4';
+    }
+    function five() {
+        nFive = calculator.number.value += '5';
+    }
+    function six() {
+        nSix = calculator.number.value += '6';
+    }
+    function seven() {
+        nSeven = calculator.number.value += '7';
+    }
+    function eight() {
+        nEight = calculator.number.value += '8';
+    }
+    function nine() {
+        nNine = calculator.number.value += '9';
+    }
+    function nul() {
+        nNul = calculator.number.value += '0';
+    }
+    function equals() {
+        nEquals = eval(document.calculator.number.value);
+        document.calculator.number.value = nEquals;
+    }
+
+</script>
+
+</body>
+</html>
