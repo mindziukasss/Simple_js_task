@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+
+    <title>Text and color</title>
+</head>
+<body>
+<div class="container">
+    <p id="black">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+        alteration in some
+        form,
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a
+        passage of Lorem Ipsum,
+        you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+        generators on the Internet tend to repeat
+        predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of
+        over 200 Latin words,
+        combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+        The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+        etc.
+    </p>
+    <button onclick="change_color()" class="btn btn-secondary"> Change color text</button>
+    <h4 id="count">Text symbols count:</h4>
+    <button onclick="symbols_count()" class="btn btn primary"> Symbols count</button>
+
+</div>
+
+<script>
+    function change_color() {
+        var color = document.getElementById('black').style.color;
+
+        if (color === "black") {
+            alert(document.getElementById('black').style.color = "red");
+        } else if (color === "red") {
+            alert(document.getElementById('black').style.color = "green");
+        } else {
+            document.getElementById('black').style.color = "black";
+        }
+    }
+
+
+    function symbols_count() {
+
+        var text = document.getElementById('black').innerHTML;
+        var letters_count = {};
+        var chars = text.split("");
+        for (var i = 0; i < chars.length; i++) {
+            if (letters_count[chars[i]] == undefined)
+                letters_count[chars[i]] = 0;
+            letters_count[chars[i]]++;
+        }
+        for (var i in letters_count) {
+            document.getElementById('count').innerHTML += i + '=' + letters_count[i] + ';';
+        }
+    }
+
+
+</script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</html>
