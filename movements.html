@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <style type="text/css">
+        button {
+            line-height: inherit;
+            margin: 5px;
+        }
+
+    </style>
+
+    <title>Movemnts</title>
+</head>
+<body>
+<div class="container">
+
+    <p id="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+        alteration in some
+        form,
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a
+        passage of Lorem Ipsum,
+        you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+        generators on the Internet tend to repeat
+        predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of
+        over 200 Latin words,
+        combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+        The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+        etc.</p>
+    <button onclick="document.getElementById('text').style.color= 'red';" class="btn btn primary"> Change color</button>
+    <button oncontextmenu="document.getElementById('text').style.color= 'green';" class="btn btn primary"> Right mouse
+        click
+    </button>
+    <button ondblclick="document.getElementById('text').style.color= 'blue';" class="btn btn primary">Duoble click
+    </button>
+
+    <button onmousedown="onMouseDown()" class="btn btn-primary">Onmousedown</button>
+    <button onmouseenter="onMouseEnter()" class="btn btn-primary">Onmouseeneter</button>
+    <button onmouseleave="onMouseleave()" class="btn btn-primary">Onmouseleave</button>
+    <button onmousemove="onMouseMove()" class="btn btn-primary">Onmousemove</button>
+    <br>
+    <br>
+    <button onmouseover="document.getElementById('text').style.color= 'yellow';" class="btn btn-success">On mouse Over
+    </button>
+    <button onmouseout="document.getElementById('text').style.color= 'red';" class="btn btn-success">On mouse Out
+    </button>
+    <button onmouseup="document.getElementById('text').style.color= 'blue';" class="btn btn-success">On mouse Up
+    </button>
+
+    <button onkeydown="onKeydown();" class="btn btn-success">On key down</button>
+    <button onkeyup="document.getElementById('text').style.color= 'red';" class="btn btn-success">On key up</button>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <h2 id="selec"></h2>
+            <select id="select" onclick="select()" class="form-control">
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="volvo">Volvo</option>
+                <option value="zass">Zass</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <button onclick="symbols_count()" class="btn btn-primary">Symbols count</button>
+        <h4 id="counts"></h4>
+
+        <button onclick="indexof()" class="btn btn-primary">Index of</button>
+        <h4 id="count"></h4>
+
+        <button onclick="lastindexof()" class="btn btn-primary">Last Index of</button>
+        <h4 id="count2"></h4>
+    </div>
+
+
+    <button onclick="replace()" class="btn btn-success">Change word</button>
+
+</div>
+<script>
+
+    function onMouseDown() {
+        document.getElementById('text').innerHTML = 'hallo';
+    }
+    function onMouseEnter() {
+        document.getElementById('text').innerHTML = 'world';
+    }
+    function onMouseleave() {
+        document.getElementById('text').innerHTML = ':):):):)';
+    }
+    function onMouseMove() {
+        document.getElementById('text').innerHTML = 'Go to work';
+    }
+    function onKeydown() {
+        var text = 'Contrary to popular belief, Lorem Ipsum is not simply random text It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.';
+        document.getElementById('text').innerHTML = '<h4>' + text + '</h4>';
+    }
+
+    function select() {
+        var x = document.getElementById("select").value;
+        document.getElementById("selec").innerHTML = x;
+    }
+
+    function symbols_count() {
+        var text = document.getElementById('text').innerHTML;
+        document.getElementById("counts").innerHTML = text.length;
+    }
+
+    function indexof() {
+        var text = document.getElementById('text').innerHTML;
+        var index = text.indexOf('the');
+        document.getElementById('count').innerHTML = index;
+    }
+
+    function lastindexof() {
+        var text = document.getElementById('text').innerHTML;
+        var lastindex = text.lastIndexOf('the');
+        document.getElementById('count2').innerHTML = lastindex;
+    }
+
+    function replace(){
+        var text = document.getElementById('text').innerHTML;
+        var image = '<img src=https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/16908369_1759416914373604_7901008978589515776_n.jpg width="75" height="50">';
+        var repla = text.replace('of',image);
+        document.getElementById('text').innerHTML = repla;
+    }
+
+
+    var text = 'true';
+    var y = new String('true');
+    var b = new String('true');
+    console.log(b == y);
+
+
+</script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</html>
