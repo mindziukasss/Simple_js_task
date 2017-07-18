@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+
+    <title>Objects</title>
+</head>
+<body>
+<div class="container">
+
+    <p id="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+        alteration in some
+        form,
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a
+        passage of Lorem Ipsum,
+        you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+        generators on the Internet tend to repeat
+        predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of
+        over 200 Latin words,
+        combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+        The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words
+        etc.
+    </p>
+    <button onclick="addPicture()" class="btn btn-success">Add image</button>
+
+</div>
+
+
+<script>
+
+    $(document).ready(function()
+
+    {
+        alert("jQuery is working!");
+    });
+
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p").hide();
+        });
+    });
+
+    function addPicture() {
+
+        var text = document.getElementById('text').innerHTML.split(/(?=[A-Z])/);
+        var img = new Image(10,20);
+        img.src = "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/16908369_1759416914373604_7901008978589515776_n.jpg";
+        var img_obj = "<img width='100px' height='50px' src='" + img.src + "'>";
+        var object = {img: img_obj, text: text}
+        var text_image = '' ;
+        for (var i = 0; i < text.length; i++) {
+            text_image += object.img.concat(object.text[i]);
+        }
+        document.getElementById('text').innerHTML = text_image;
+    }
+
+
+</script>
+
+</body>
+<script type="text/javascript" src="yourCDNUrlAddressjQueryFile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</html>
